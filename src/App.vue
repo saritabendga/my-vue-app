@@ -1,26 +1,39 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Hi Sarita"/>
-</template>
+	<template>
+	  <div>
+			<p  v-if="showItems">Conditionally Rendered Item </p>
+			<p v-for="(item, index) in items" :key="index">{{ item }} </p>
+		</div>
+	
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+   <h2>Toggle Component</h2>
+    <button @click="toggleComponent">Toggle Component</button>
+    
+    <!-- Conditional rendering based on toggle state -->
+    <div v-if="toggleState">
+      <p>Component A</p>
+    </div>
+    <div v-else>
+      <p>Component B</p>
+    </div>
+  </div>
+  </template>
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+	<script>
+	export default {
+		name:"App",
+		data() {
+			return {
+				showItems: true,
+        items: ['Apple', 'Banana', 'Strawberry'],
+        toggleState: true
+			},
+      methods: {
+        toggleComponent() {
+          this.toggleState = !this.toggleState;
+        }
+      }
+			}
+	}
+	</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+   
