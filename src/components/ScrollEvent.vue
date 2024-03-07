@@ -40,4 +40,5 @@ export default{
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
+
 </style>
