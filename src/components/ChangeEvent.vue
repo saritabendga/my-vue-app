@@ -1,4 +1,9 @@
 <!--event handling Keydown Event-->
+<!-- Change Event: Create a select dropdown with some options. Display an alert whenever the selected option changes. (
+@change
+="handleSelectChange")-->
+
+
 <template>
   <div>
     <select @change="handleSelectChange">

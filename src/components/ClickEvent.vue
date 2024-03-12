@@ -1,4 +1,7 @@
 <!--event handling click event-->
+<!-- Click Event: Create a button that toggles a boolean value between true and false when clicked. Display the value on the screen. (@click="toggleValue")   -->
+
+
 <template>
   <div>
     <p>Current value is {{ value }}</p>

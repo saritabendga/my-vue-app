@@ -1,4 +1,7 @@
 <!--event handling Blur Event-->
+<!-- Blur Event: Create an input field. Display an alert when the input field loses focus. (@blur="handleBlur") -->
+
+
 <template>
   <div>
     <input type="text" @focus="handleFocus" @blur="handleBlur">

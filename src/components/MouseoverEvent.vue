@@ -1,4 +1,8 @@
 <!--event handling Mouseover Event-->
+<!--Create a div element with some text inside it. When you hover over the div, change the text color to red. (@mouseover="changeTextColor")    -->
+
+
+
 <template>
    <div :style="{ color: textColor }" @mouseover="changeTextColor('red')" @mouseout="changeTextColor('black')">
     Hover over to change color

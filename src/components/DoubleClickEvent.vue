@@ -1,4 +1,7 @@
-<!--event handling Double Click Event-->
+<!--event handling Double Click Event-->     
+<!-- Double Click Event: Create a button. When the button is double-clicked, change its background color. (@dblclick="changeBackgroundColor")-->
+
+
 <template>
   <div>
     <button @dblclick="changeBGColor">Double-click me!</button>

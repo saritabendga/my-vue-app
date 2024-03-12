@@ -1,4 +1,7 @@
 <!--event handling Submit Event-->
+<!-- Submit Event: Create a form with an input field and a submit button. When the form is submitted, display an alert with the value entered in the input field. (Work on this after form handling class)  -->
+
+
 <template>
      <form @submit.prevent="handleSubmit">
     <label for="inputField">Enter a value:</label>

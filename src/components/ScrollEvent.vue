@@ -1,4 +1,7 @@
 <!--event handling Scroll Event-->
+<!-- Scroll Event: Create a long list of elements. When the user scrolls down the page, display an alert indicating the scroll position. (@scroll="handleScroll") -->
+
+
 <template>
   <div class="scrollable-container" @scroll="handleScroll">
     <div v-for="item in items" :key="item.id" class="item">
