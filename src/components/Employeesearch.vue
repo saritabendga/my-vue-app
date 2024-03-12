@@ -1,6 +1,6 @@
 <template>
   <div>
-            Employee Search
+           Employee Search
     <br/>
     <input v-my-search="search" type="text" v-model="search" placeholder="Search an employee" />
     <br/>
@@ -52,9 +52,9 @@ div {
 }
 
 input {
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .errorMsg {
