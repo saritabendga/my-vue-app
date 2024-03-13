@@ -1,6 +1,6 @@
 <template>
   <div class="cue">
-    <h2>Enter Your Information:</h2>
+    <h2>Enter Your Details:</h2>
     <form @submit.prevent="submitForm">
       <div class="form-group">
         <label for="name">Name:</label>

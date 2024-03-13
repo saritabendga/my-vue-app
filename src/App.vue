@@ -1,29 +1,51 @@
 <template>
   <div>
-    <h2 v-highlight="'yellow'">Hover over me to highlight in yellow!</h2>
-    <p v-highlight="'lightblue'">Hover over me to highlight in light blue!</p>
-  </div>
+        <p v-on:mouseover="changeVal" v-on:mouseout="resetVal" v-my-hover="directiveVal"> Hover to change color
+        </p>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+    name: "App",
+    data() {
+        return {
+            directiveVal: "",
+        }
+    },
+    methods: {
+        changeVal() {
+            this.directiveVal = "hover"
+        },
+        resetVal() {
+            this.directiveVal = "out"
+        }
+    },
   directives: {
-    highlight: {
-      bind(el, binding) {
-        console.log('Directive bound:', binding.value); // Log the value passed to the directive
-        el.addEventListener('mouseenter', () => {
-          console.log('Mouse entered');
-          el.style.backgroundColor = binding.value;
-        });
-        el.addEventListener('mouseleave', () => {
-          console.log('Mouse left');
-          el.style.backgroundColor = 'transparent';
-        });
-      }
+        'my-hover': {
+            mounted(el, binding) {
+                console.log("binding", binding.value);
+                if (binding.value === 'hover') {
+                    el.style.backgroundColor = 'red'
+                    el.style.color = 'white'
+                } else {
+                    el.style.backgroundColor = 'white'
+                    el.style.color = 'black'
+                }
+            },
+            updated(el, binding) {
+                console.log("binding updated", binding.value);
+                if (binding.value === 'hover') {
+                    el.style.backgroundColor = 'red'
+                    el.style.color = 'white'
+                } else {
+                    el.style.backgroundColor = 'white'
+                    el.style.color = 'black'
+                }
+            },
+        }
     }
-  }
-};
+}
 </script>
 
 <style scoped>

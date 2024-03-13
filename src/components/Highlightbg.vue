@@ -1,35 +1,53 @@
 <template>
-  <div id="app">
-    <div v-highlight="highlightColor1">
-      Hover over me to highlight in {{ highlightColor1 }}!
+  <div>
+        <p v-on:mouseover="changeVal" v-on:mouseout="resetVal" v-my-hover="directiveVal">On Hover directive Color Change
+        </p>
     </div>
-    <div v-highlight="highlightColor2">
-      Hover over me to highlight in {{ highlightColor2 }}!
-    </div>
-  </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  data() {
-    return {
-      highlightColor1: 'yellow',
-      highlightColor2: 'lightblue'
-    };
-  },
+    name: "App",
+    data() {
+        return {
+            directiveVal: "",
+        }
+    },
+    methods: {
+        changeVal() {
+            this.directiveVal = "hover"
+        },
+        resetVal() {
+            this.directiveVal = "out"
+        }
+    },
   directives: {
-    highlight: {
-      bind(el, binding) {
-        el.style.transition = 'background-color 0.3s';
-        el.addEventListener('mouseenter', () => {
-          el.style.backgroundColor = binding.expression;
-        });
-        el.addEventListener('mouseleave', () => {
-          el.style.backgroundColor = null;
-        });
-      }
+        'my-hover': {
+            mounted(el, binding) {
+                console.log("binding", binding.value);
+                if (binding.value === 'hover') {
+                    el.style.backgroundColor = 'red'
+                    el.style.color = 'white'
+                } else {
+                    el.style.backgroundColor = 'white'
+                    el.style.color = 'black'
+                }
+            },
+            updated(el, binding) {
+                console.log("binding updated", binding.value);
+                if (binding.value === 'hover') {
+                    el.style.backgroundColor = 'red'
+                    el.style.color = 'white'
+                } else {
+                    el.style.backgroundColor = 'white'
+                    el.style.color = 'black'
+                }
+            },
+        }
     }
-  }
-};
+}
 </script>
+
+<style scoped>
+/* Add your component-specific styles here */
+</style>
