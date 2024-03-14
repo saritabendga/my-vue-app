@@ -16,7 +16,6 @@ export default {
     };
   },
   mounted() {
-    axios
     this.getEmployeeData(); // Call the GET method when the component is mounted
   },
   methods: {
