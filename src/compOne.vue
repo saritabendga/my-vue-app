@@ -5,9 +5,7 @@
 
 <script>
 export default {
-  data() {
-    return{
-    }
+  name : 'compOne'
   },
   computed: {
     count(){
